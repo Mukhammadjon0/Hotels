@@ -1,0 +1,7 @@
+.hotels-list{
+    display: grid;
+    padding: 10px 50px;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    background-color: brown;
+}

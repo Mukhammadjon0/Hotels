@@ -1,0 +1,18 @@
+.kard{
+    padding: 10px 50px;
+    background-color: red;
+}
+.kard form{
+    margin-bottom: 10px;
+}
+.kard form button{
+    padding: 3px 10px;
+    background-color: cornflowerblue;
+    border: none;
+    outline: 1px solid cornflowerblue;
+    color: white;
+    cursor: pointer;
+}
+.kard form input{
+    padding: 3px ;
+}
