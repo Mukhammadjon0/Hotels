@@ -1,11 +1,10 @@
 import React from "react";
-import { useContext } from "react";
+import {useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { StateContext } from "../../context/Context";
 import "./Navbar.css";
 function Navbar() {
-  const {state}=useContext(StateContext)
-  console.log(state)
+  const reserved = useSelector((state) => state.reserve.reserve);
+
   return (
     <nav>
       <NavLink className={'nav-link'} to={"/"}>
@@ -20,7 +19,7 @@ function Navbar() {
         </NavLink>
         <NavLink className={"nav-link"} to={"/reserved"}>
           Reserved 
-        <sup>({state.reserve.length})</sup>
+        <sup>({reserved.length})</sup>
         </NavLink>
       </div>
     </nav>
