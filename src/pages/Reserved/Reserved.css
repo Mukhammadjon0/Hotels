@@ -1,0 +1,20 @@
+.reserved-card{
+    background-color: gray;
+    padding: 20px;
+    border: 2px solid black;
+}
+.reserved{
+    background-color: crimson;
+    padding: 20px 50px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, auto);
+}
+.reserved-card button{
+    padding: 5px 15px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    outline: 1px solid crimson;
+    cursor: pointer;
+}
