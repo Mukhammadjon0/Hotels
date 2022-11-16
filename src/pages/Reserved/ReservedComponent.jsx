@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { deleteProd } from "../../reducer/hotelSlice";
+import { deleteHotel } from "../../reducer/hotelSlice";
 import "./Reserved.css";
 function ReservedComponent({ name, id, narxi, stayDay, startDay, jamiNarxi }) {
   const dispatch = useDispatch();
   const reserve = useSelector((state) => state.reserve.reserve);
   const navigate = useNavigate();
-  const deleteProdBtn = () => {
-    dispatch(deleteProd(id));
+  const deleteHotelBtn = () => {
+    dispatch(deleteHotel(id));
     if (reserve.length === 1) navigate("/");
   };
   return (
@@ -20,7 +20,7 @@ function ReservedComponent({ name, id, narxi, stayDay, startDay, jamiNarxi }) {
       <p> {startDay} kundan boshlab</p>
 
       <h3 className="jami-text">Jami: {jamiNarxi}$</h3>
-      <button onClick={deleteProdBtn}>Delete</button>
+      <button onClick={deleteHotelBtn}>Delete</button>
     </div>
   );
 }

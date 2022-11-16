@@ -14,36 +14,14 @@ const hotelSlice = createSlice({
         reserve: [...state.reserve, action.payload],
       });
     },
-    deleteProd: (state, action) => {
-      const filteredUsers = state.reserve.filter(
+    deleteHotel: (state, action) => {
+      const filteredHotels = state.reserve.filter(
         (item) => item.id !== action.payload
       );
-      state.reserve = filteredUsers;
-    },
-    addDayToHotel: (state, action) => {
-      const addedDayToHotel = state.reserve.map((item) => {
-        if (item.id === action.payload.id) {
-          return {
-            ...item,
-            stayDay: action.payload.day,
-          };
-        } else return item;
-      });
-      state.reserve = addedDayToHotel;
-    },
-    addStartDay: (state, action) => {
-      const addedStartDay = state.reserve.map((item) => {
-        if (item.id === action.payload.id) {
-          return {
-            ...item,
-            startDay: action.payload.startDay,
-          };
-        } else return item;
-      });
-      state.reserve = addedStartDay;
+      state.reserve = filteredHotels;
     },
   },
 });
 
-export const { addToReserved, deleteProd, addDayToHotel, addStartDay } = hotelSlice.actions;
+export const { addToReserved, deleteHotel } = hotelSlice.actions;
 export default hotelSlice.reducer;
